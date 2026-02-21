@@ -1,66 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MSP's Screen Recorder</title>
     <style>
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-    margin: 0;
-}
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
 
-.container {
-    text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #28a745;
-    color: white;
-    transition: background-color 0.3s ease;
-}
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
 
-button:hover {
-    background-color: #218838;
-}
+        button:hover {
+            background-color: #218838;
+        }
 
-button:disabled {
-    background-color: #6c757d;
-}
+        button:disabled {
+            background-color: #6c757d;
+        }
 
-#message {
-    margin-top: 10px;
-    color: red;
-}
-
+        #message {
+            margin-top: 10px;
+            color: red;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="container">
-        <h1>Screen Recorder</h1>
+        <h1>Screen Recorder By Mohd Suhail</h1>
         <div id="controls">
-            <button id="startBtn" onclick="startRecording()">Start Recording</button>
-            <button id="stopBtn" onclick="stopRecording()" disabled>Stop Recording</button>
+            <button id="startBtn" aria-label="Start screen recording">Start Recording</button>
+            <button id="stopBtn" aria-label="Stop screen recording" disabled>Stop Recording</button>
         </div>
-        <p id="message"></p>
+        <div style="margin-top: 15px;">
+            <label style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <input type="checkbox" id="micToggle" style="width: 18px; height: 18px;">
+                <span>Record Microphone</span>
+            </label>
+        </div>
+        <p id="tip" style="font-size: 14px; color: #666; margin-top: 15px;">
+            <b>Tip:</b> To record system sound, check the <b>"Share system audio"</b> box in the browser prompt.
+        </p>
+        <p id="message" aria-live="polite"></p>
     </div>
 
-<script src="app.js"></script>
+    <script src="app.js"></script>
 
 </body>
+
 </html>
